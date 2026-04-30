@@ -106,6 +106,17 @@
   (evil-ex-nohighlight)
   (keyboard-quit))
 
+(defun mk/restart-emacs-daemon ()
+  "Restart Emacs daemon, or restart normally if not running as daemon."
+  (interactive)
+  (if (daemonp)
+      (progn
+        (save-some-buffers t)
+        (call-process "bash" nil nil nil "-c"
+                      "sleep 1 && emacs --daemon &")
+        (kill-emacs))
+    (restart-emacs)))
+
 (use-package evil
   :ensure t
   :custom
@@ -248,6 +259,7 @@
 
   ;;; Quit
   (evil-define-key 'normal 'global (kbd "<leader> q r") 'restart-emacs)
+  (evil-define-key 'normal 'global (kbd "<leader> q R") 'mk/restart-emacs-daemon)
   (evil-define-key 'normal 'global (kbd "<leader> q q") 'save-buffers-kill-terminal)
   (which-key-add-key-based-replacements "<leader> q" "Quit")
 
