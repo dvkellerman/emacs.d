@@ -33,7 +33,7 @@
       frame-inhibit-implied-resize t)
 
 ;; Hide mode-line until punch-line loads
-(setq-default mode-line-format nil)
+;;(setq-default mode-line-format nil)
 
 ;; Frame defaults — applied before first frame renders
 (setq default-frame-alist

@@ -30,7 +30,6 @@
 (require 'mk-misc)
 (require 'mk-notifications)
 (require 'mk-web)
-(require 'mk-term)
 (require 'mk-vc)
 (require 'mk-treemacs)
 (require 'mk-ui)
