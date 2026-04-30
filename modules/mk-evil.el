@@ -131,11 +131,10 @@
   ;; Top-level
   (evil-define-key 'normal 'global (kbd "<leader>SPC") 'execute-extended-command)
   (evil-define-key 'normal 'global (kbd "<leader> .") 'embark-act)
-  (evil-define-key 'normal 'global (kbd "<leader> P") 'package-install)
+  (evil-define-key 'normal 'global (kbd "<leader> /") 'consult-ripgrep)
   (evil-define-key 'normal 'global (kbd "<leader> S") 'consult-line-multi)
   (evil-define-key 'normal 'global (kbd "<leader> F") 'consult-line)
   (evil-define-key 'normal 'global (kbd "<leader>TAB") 'mk/switch-to-last-buffer)
-  (evil-define-key 'normal 'global (kbd "<leader>'") 'toggle-vterm)
 
   ;;; Buffers
   (evil-define-key 'normal 'global (kbd "<leader> b b") 'consult-buffer)
@@ -168,11 +167,9 @@
   (which-key-add-key-based-replacements "<leader> e" "Eval/Embark")
 
   ;;; Files
-  (evil-define-key 'normal 'global (kbd "<leader> f b") 'consult-buffer)
   (evil-define-key 'normal 'global (kbd "<leader> f d") 'delete-file)
   (evil-define-key 'normal 'global (kbd "<leader> f e") 'mk/edit-init-file)
-  (evil-define-key 'normal 'global (kbd "<leader> f f") 'find-file)
-  (evil-define-key 'normal 'global (kbd "<leader> f o") 'consult-find)
+  (evil-define-key 'normal 'global (kbd "<leader> f f") 'consult-find)
   (evil-define-key 'normal 'global (kbd "<leader> f l") 'consult-focus-lines)
   (evil-define-key 'normal 'global (kbd "<leader> f n") 'create-file-buffer)
   (evil-define-key 'normal 'global (kbd "<leader> f r") 'consult-recent-file)
@@ -214,12 +211,11 @@
   (which-key-add-key-based-replacements "<leader> t" "Toggle")
 
   ;;; Project
-  (evil-define-key 'normal 'global (kbd "<leader> p f") 'consult-ripgrep)
-  (evil-define-key 'normal 'global (kbd "<leader> p o") 'project-find-file)
-  (evil-define-key 'normal 'global (kbd "<leader> p d") 'project-dired)
+  (evil-define-key 'normal 'global (kbd "<leader> p f") 'project-find-file)
+  (evil-define-key 'normal 'global (kbd "<leader> p d") 'project-kill-buffers)
+  (evil-define-key 'normal 'global (kbd "<leader> p D") 'project-dired)
   (evil-define-key 'normal 'global (kbd "<leader> p g") 'project-find-regexp)
   (evil-define-key 'normal 'global (kbd "<leader> p s") 'project-switch-project)
-  (evil-define-key 'normal 'global (kbd "<leader> p d") 'project-kill-buffers)
   (evil-define-key 'normal 'global (kbd "<leader> p b") 'consult-project-buffer)
   (evil-define-key 'normal 'global (kbd "<leader> p t") 'treemacs)
   (evil-define-key 'normal 'global (kbd "<leader> p T") 'treemacs-find-file)
