@@ -12,7 +12,7 @@
 (use-package autothemer
   :ensure t
   :init
-  (load-theme 'kanagawa t))
+  (load-theme 'rose-pine t))
 
 (provide 'mk-theme)
 ;;; mk-theme.el ends here
