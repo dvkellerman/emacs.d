@@ -26,6 +26,7 @@
 (require 'mk-editing)
 (require 'mk-ios-development)
 (require 'mk-cc-development)
+(require 'mk-python)
 (require 'mk-lisp)
 (require 'mk-misc)
 (require 'mk-notifications)
@@ -48,10 +49,11 @@
         welcome-dashboard-max-number-of-todos 5
         welcome-dashboard-path-max-length 70
         welcome-dashboard-min-left-padding 10
-        welcome-dashboard-image-file (expand-file-name "themes/emacs.png" user-emacs-directory)
-        welcome-dashboard-image-width 200
-        welcome-dashboard-image-height 200
         welcome-dashboard-title "Welcome Dmitry. Have a great day!")
+  (when (display-graphic-p)
+    (setq welcome-dashboard-image-file (expand-file-name "themes/emacs.png" user-emacs-directory)
+          welcome-dashboard-image-width 200
+          welcome-dashboard-image-height 200))
   (welcome-dashboard-create-welcome-hook)
 
   ;; Patch: add 'path property to project entries so RET works on them

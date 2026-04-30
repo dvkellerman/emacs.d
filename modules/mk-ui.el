@@ -90,7 +90,8 @@
   (with-eval-after-load 'evil-collection
     (evil-collection-define-key 'normal 'dired-mode-map
       "h" 'dired-up-directory
-      "l" 'dired-find-file)))
+      "l" 'dired-find-file
+      (kbd "SPC") nil)))
 
 (use-package which-key
   :ensure nil
