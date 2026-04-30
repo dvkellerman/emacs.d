@@ -1,0 +1,33 @@
+[submodule "localpackages/candyshop"]
+	path = localpackages/candyshop
+	url = https://github.com/konrad1977/candyshop.git
+[submodule "localpackages/flycheck-eglot"]
+	path = localpackages/flycheck-eglot
+	url = https://github.com/konrad1977/flycheck-eglot.git
+[submodule "localpackages/kanagawa-emacs"]
+	path = localpackages/kanagawa-emacs
+	url = https://github.com/konrad1977/kanagawa-emacs.git
+[submodule "localpackages/flyover"]
+	path = localpackages/flyover
+	url = https://github.com/konrad1977/flyover.git
+[submodule "localpackages/knockknock"]
+	path = localpackages/knockknock
+	url = https://github.com/konrad1977/knockknock.git
+[submodule "localpackages/spotlight-mode"]
+	path = localpackages/spotlight-mode
+	url = https://github.com/konrad1977/spotlight-mode.git
+[submodule "localpackages/neofusion-emacs"]
+	path = localpackages/neofusion-emacs
+	url = https://github.com/konrad1977/neofusion-emacs.git
+[submodule "localpackages/punch-line"]
+	path = localpackages/punch-line
+	url = https://github.com/konrad1977/punch-line.git
+[submodule "localpackages/swift-development"]
+	path = localpackages/swift-development
+	url = https://github.com/konrad1977/swift-development.git
+[submodule "localpackages/welcome-dashboard"]
+	path = localpackages/welcome-dashboard
+	url = https://github.com/konrad1977/welcome-dashboard.git
+[submodule "localpackages/mito-laser-emacs"]
+	path = localpackages/mito-laser-emacs
+	url = https://github.com/konrad1977/mito-laser-emacs.git

@@ -3,14 +3,6 @@
 /.cache/
 /.DS_Store
 *DS_Store*
-/localpackages/cocaine/
-/localpackages/darken-buffer/
-/localpackages/flycheck-eglot/
-/localpackages/flycheck-overlay/
-/localpackages/mito-laser-emacs/
-/localpackages/periphery/
-/localpackages/swift-development/
-/localpackages/welcome-dashboard/
 
 # Temporary and runtime files
 flycheck_*.el
@@ -24,8 +16,3 @@ flycheck_*.el
 /tree-sitter/
 /projects
 /var/
-/localpackages/knockknock/
-/localpackages/punch-line/
-/localpackages/spotlight-mode/
-/localpackages/periphery/*
-/periphery*
