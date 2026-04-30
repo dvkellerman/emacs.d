@@ -32,8 +32,8 @@
       initial-major-mode 'fundamental-mode
       frame-inhibit-implied-resize t)
 
-;; Hide mode-line until punch-line loads
-;;(setq-default mode-line-format nil)
+;; Hide mode-line during init to avoid expensive redraws
+(setq-default mode-line-format nil)
 
 ;; Frame defaults — applied before first frame renders
 (setq default-frame-alist
@@ -56,6 +56,8 @@
             (setq file-name-handler-alist mk/file-name-handler-alist-original
                   gc-cons-threshold (* 100 1024 1024)
                   gc-cons-percentage 0.2)
+            (setq-default mode-line-format (default-value 'mode-line-format))
+            (force-mode-line-update t)
             (message "Emacs started in %.2f seconds with %d GCs"
                      (float-time (time-subtract after-init-time before-init-time))
                      gcs-done)))
