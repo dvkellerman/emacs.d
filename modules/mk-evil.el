@@ -221,6 +221,7 @@
   (evil-define-key 'normal 'global (kbd "<leader> t w") 'mk/toggle-whitespace)
   (evil-define-key 'normal 'global (kbd "<leader> t f") 'focus-delight-mode-for-mode)
   (evil-define-key 'normal 'global (kbd "<leader> t c") 'candyshop-toggle)
+  (evil-define-key 'normal 'global (kbd "<leader> t o") 'olivetti-mode)
   (evil-define-key 'normal 'global (kbd "<leader> t l") 'mk/toggle-line-numbers)
   (which-key-add-key-based-replacements "<leader> t" "Toggle")
 

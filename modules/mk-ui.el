@@ -34,6 +34,14 @@
   :custom
   (candyshop-alpha-values '(100 92)))
 
+(use-package olivetti
+  :ensure t
+  :defer t
+  :commands olivetti-mode
+  :custom
+  (olivetti-body-width 90)
+  (olivetti-style 'fancy))
+
 ;;; --- Mode line ---
 
 (use-package doom-modeline

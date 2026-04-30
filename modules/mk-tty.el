@@ -23,6 +23,20 @@
   (when (require 'osc nil t)
     (osc-foreign-selection-mode 1))
 
+  ;; macOS: use pbcopy/pbpaste for kill-ring ↔ system clipboard
+  (when (eq system-type 'darwin)
+    (setq interprogram-cut-function
+          (lambda (text &rest _)
+            (let ((process-connection-type nil))
+              (let ((proc (start-process "pbcopy" nil "pbcopy")))
+                (process-send-string proc text)
+                (process-send-eof proc))))
+          interprogram-paste-function
+          (lambda ()
+            (let ((clip (shell-command-to-string "pbpaste")))
+              (unless (string= clip (car kill-ring))
+                clip)))))
+
   ;; Vertico: disable posframe in TTY (falls back to minibuffer)
   (with-eval-after-load 'vertico-posframe
     (setq vertico-multiform-commands
