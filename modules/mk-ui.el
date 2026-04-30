@@ -36,53 +36,29 @@
 
 ;;; --- Mode line ---
 
-(use-package punch-line
-  :ensure nil
-  :defer t
-  :bind (("C-x t n" . punch-line-what-am-i-doing-next)
-         ("C-x t N" . punch-line-what-am-i-doing-next-task)
-         ("C-x t d" . punch-line-what-am-i-doing-done)
-         ("C-x t a" . punch-line-what-am-i-doing-show-all)
-         (:repeat-map punch-line-repeat-map
-                      ("n" . punch-line-what-am-i-doing-next)
-                      ("N" . punch-line-what-am-i-doing-next-task)
-                      ("d" . punch-line-what-am-i-doing-done)
-                      ("a" . punch-line-what-am-i-doing-show-all)))
-  :init
-  (defvar mk-ui--punch-line-activated nil)
-  (defun mk-ui--activate-punch-line ()
-    "Activate punch-line on first file or project visit."
-    (unless mk-ui--punch-line-activated
-      (setq mk-ui--punch-line-activated t)
-      (require 'punch-line)
-      (punch-line-mode 1)
-      (punch-weather-update)
-      (punch-load-tasks)))
-  (add-hook 'find-file-hook #'mk-ui--activate-punch-line)
-  (add-hook 'dired-mode-hook #'mk-ui--activate-punch-line)
-  :config
-  (setopt punch-show-project-info t
-          punch-line-modal-use-fancy-icon t
-          punch-line-modal-divider-style 'circle
-          punch-line-modal-size 'large
-          punch-line-left-separator " "
-          punch-line-right-separator " "
-          punch-line-section-padding 10
-          punch-show-git-info t
-          punch-show-lsp-info t
-          punch-line-vc-use-github-icon t
-          punch-show-copilot-info nil
-          punch-show-battery-info t
-          punch-show-flycheck-info t
-          punch-show-weather-info t
-          punch-show-column-info t
-          punch-show-what-am-i-doing-info t
-          punch-weather-latitude "49.8397"
-          punch-weather-longitude "24.0297"
-          punch-line-music-max-length 80
-          punch-line-section-backgrounds 'auto
-          punch-line-section-background-tint-step 5
-          punch-line-music-info '(:service apple)))
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode)
+  :custom
+  (doom-modeline-height 30)
+  (doom-modeline-bar-width 4)
+  (doom-modeline-icon t)
+  (doom-modeline-major-mode-icon t)
+  (doom-modeline-major-mode-color-icon t)
+  (doom-modeline-buffer-file-name-style 'truncate-upto-project)
+  (doom-modeline-buffer-state-icon t)
+  (doom-modeline-buffer-modification-icon t)
+  (doom-modeline-lsp t)
+  (doom-modeline-minor-modes nil)
+  (doom-modeline-vcs-max-length 20)
+  (doom-modeline-env-version t)
+  (doom-modeline-modal t)
+  (doom-modeline-modal-icon t)
+  (doom-modeline-modal-modern-icon t)
+  (doom-modeline-battery t)
+  (doom-modeline-time t)
+  (doom-modeline-display-default-persp-name t)
+  (doom-modeline-project-detection 'project))
 
 (use-package mode-line-hud
   :ensure nil)
