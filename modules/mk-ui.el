@@ -95,11 +95,26 @@
   :custom
   (dired-listing-switches "-aBhl --group-directories-first")
   :config
+  (defun mk/dired-peek-back ()
+    "If at line 1 column 0 and previous buffer is dired, switch back to it."
+    (interactive)
+    (if (and (= (current-column) 0)
+             (= (line-number-at-pos) 1)
+             (let ((prev (other-buffer (current-buffer) t)))
+               (and prev (with-current-buffer prev
+                           (derived-mode-p 'dired-mode)))))
+        (switch-to-buffer (other-buffer (current-buffer) t))
+      (evil-backward-char)))
+
   (with-eval-after-load 'evil-collection
     (evil-collection-define-key 'normal 'dired-mode-map
       "h" 'dired-up-directory
       "l" 'dired-find-file
-      (kbd "SPC") nil)))
+      (kbd "<left>") 'dired-up-directory
+      (kbd "<right>") 'dired-find-file
+      (kbd "SPC") nil))
+
+  (evil-define-key 'normal 'global (kbd "<left>") 'mk/dired-peek-back))
 
 (use-package which-key
   :ensure nil
